@@ -8,7 +8,13 @@ class CometFallEvent:
 
 
     def add_percent(self):
-        self.percent += self.percent_speed/5
+        self.percent += self.percent_speed/100
+
+    def is_full_loaded(self):
+        return
+
+    def attempt_fall(self):
+
 
     def update_bar(self, surface):
         self.add_percent()
