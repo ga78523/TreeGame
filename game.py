@@ -25,7 +25,6 @@ class Game:
         self.all_monsters = pygame.sprite.Group()
         self.player.health = self.player.max_health
         self.is_playing = False
-        self.comet_event.percent = 0
 
     def spawn_monster(self):
         monster = Monster(self)
