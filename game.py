@@ -47,13 +47,21 @@ class Game:
         # display the monsters
         self.all_monsters.draw(screen)
 
+        # display the comets
+        self.comet_event.all_comets.draw(screen)
+
         # for each projectile in the group, move the projectile
         for projectile in self.player.all_projectiles:
             projectile.move()
 
+        # for each monster in the group, move and and display the health bar
         for monster in self.all_monsters:
             monster.move_monster()
             monster.update_health_bar(screen)
+
+        # for each comet in the group, move the comet
+        for comet in self.comet_event.all_comets:
+            comet.fall()
 
         # move the player
         if self.pressed.get(pygame.K_RIGHT) and self.player.rect.x + self.player.rect.width < 1080:
